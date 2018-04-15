@@ -1,0 +1,17 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: greenrd-pg-cluster
+spec:
+  teamId: "greenrd"
+  volume:
+    size: {{ .Values.postgresql.size }}
+  numberOfInstances: {{ .Values.postgresql.instances }}
+  users:
+    greenrd:
+    - superuser
+    - createdb
+  #databases: name->owner
+  databases:
+  postgresql:
+    version: "{{ .Values.postgresql.version }}"

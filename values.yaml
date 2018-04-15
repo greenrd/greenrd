@@ -1,0 +1,4 @@
+postgresql:
+  size: 1Gi
+  instances: 3
+  version: "10"
